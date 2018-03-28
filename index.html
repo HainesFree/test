@@ -3,10 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <style>
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f2f2f2;
+    }
+    .header {
+      width: 100%;
+      height: 1.32rem;
+      margin-bottom: 0.28rem;
+      font-family: PingFangSC-Semibold;
+      font-weight: 700;
+      font-size: .54rem;
+      color: #333333;
+      background-size: 100% 1.32rem;
+      text-align: center;
+      line-height: 1.32rem;
+      background: #fff;
+    }
+    .point{
+      width: 0.68rem;
+      position: absolute;
+      top: 0.66rem;
+      right: 0.4rem;
+    }
+    .back{
+      width: .62rem;
+      height: .44rem;
+      position: absolute;
+      left: .4rem;
+      top: .44rem;
+    }
+    .content {
+      height: 1.33rem;
+      padding-left: .4rem;
+      background: #fff;
+      font-family: PingFangSC-Regular;
+      font-size: 0.44rem;
+      color: #333333;
+    }
+    .content-item {
+      position: relative;
+      height: 1.30rem;
+      line-height: 1.30rem;
+      padding-left: 1.55rem;
+      font-family: PingFangSC-Regular;
+      font-size: .44rem;
+      color: #333333;
+    }
+    .content-item::after{
+      content: " ";
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-bottom: 1px solid #d9d9d9;
+      -webkit-transform: scaleY(.5);
+      transform: scaleY(.5);
+    }
+    .content-item .itemImg-left {
+      position: absolute;
+      left: .15rem;
+      top: .35rem;
+      width: .62rem;
+      height: .65rem;
+    }
+    .itemImg-right {
+      vertical-align: top;
+      position: absolute;
+      width: .34rem;
+      height: .34rem;
+      top: .49rem;
+      right: .4rem;
+    }
+    .content-last::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-bottom: none;
+    }
+  </style>
 </head>
 <body>
-<div>
-    Hello world!!
+<div class="container">
+  <div class="header">管理</div>
+  <img src="image/point.png" alt="" class="point">
+  <img src="image/back.png" alt="" class="back">
+  <div class="content">
+    <div class="content-item">
+      <img src="image/img-group1.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      社群资料
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content-item">
+      <img src="image/img-group2.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      活动管理
+    </div>
+  </div>
+  <div class="content">
+    <div class="content-item">
+      <img src="image/img-group3.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      成员管理
+    </div>
+  </div>
+  <div class="content">
+    <div class="content-item">
+      <img src="image/img-group4.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      粉丝管理
+    </div>
+  </div>
+  <div class="content">
+    <div class="content-item">
+      <img src="image/img-group5.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      相册管理
+    </div>
+  </div>
+  <div class="content content-last">
+    <div class="content-item content-last">
+      <img src="image/img-group6.png" alt="" class="itemImg-left">
+      <img src="image/right-slice.png" alt="" class="itemImg-right">
+      资质认证
+    </div>
+  </div>
 </div>
+<script>
+  window.onload = function () {
+    getRem(1080, 100)
+  };
+  window.onresize = function () {
+    getRem(1080, 100)
+  };
+
+  function getRem(pwidth, prem) {
+    var html = document.getElementsByTagName("html")[0];
+    var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
+    html.style.fontSize = oWidth / pwidth * prem + "px";
+  }
+</script>
 </body>
 </html>
+
